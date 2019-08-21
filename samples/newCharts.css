@@ -32,22 +32,21 @@ body .chart-test-1__box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 37px;
+  margin-left: 46px;
   margin-top: -25px;
 }
 
 body .chart-test-1__box-item {
-  width: calc(100% / 8);
+  width: calc(12.5% - 10px);
   text-align: center;
+  padding: 0 5px;
+  border-left: 1px solid #e5e5e5;
 }
 
 body .chart-test-1__box-item div {
-  width: 96%;
   height: 40px;
   color: #fff;
   margin-bottom: 5px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 body .chart-test-1__box-item div:first-child {
@@ -60,6 +59,10 @@ body .chart-test-1__box-item div:not(:first-child) {
 }
 
 body .chart-test-1__box-item div.active {
+  background-color: #fb7751;
+}
+
+body .chart-test-1__box-item div:hover {
   background-color: #fb7751;
 }
 /*# sourceMappingURL=newCharts.css.map */

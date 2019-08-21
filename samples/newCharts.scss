@@ -29,22 +29,27 @@ body {
 
   &__box {
     display: flex;
-    margin-left: 37px;
+    margin-left: 46px;
     margin-top: -25px;
   }
 
   &__box-item{
-    width: calc(100% / 8);
+    width: calc(12.5% - 10px);
     text-align: center;
+padding: 0 5px;
+
+
+
+  border-left: 1px solid #e5e5e5;
+
 
     div {
-      width: 96%;
+
 
       height: 40px;
       color: #fff;
       margin-bottom: 5px;
-      margin-left: auto;
-      margin-right: auto;
+  
 
       &:first-child {
         background-color: #0e7691;
@@ -58,6 +63,10 @@ body {
       &.active {
         background-color: #fb7751;
 
+      }
+
+      &:hover {
+        background-color: #fb7751;
       }
     }
   }
