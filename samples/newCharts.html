@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bar Chart</title>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<link rel="stylesheet" href="./newCharts.css" />
+		<script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+		<script src="../scripts/utils.js"></script>
+	</head>
+
+	<body>
+		<div id="container" class="chart-test-1">
+			<ul class="chart-test-1__label" id="chart-test-1__label">
+				<li>1 Month</li>
+				<li>3 Month</li>
+				<li>ytd</li>
+				<li>1 year</li>
+				<li>3 year</li>
+				<li>5 year</li>
+				<li>10 year</li>
+				<li>Since 8/30/04</li>
+			</ul>
+
+			<canvas id="canvas" class="chart-test-1__canvas"></canvas>
+
+			<div class="chart-test-1__box">
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_0_item_0">10.50</div>
+					<div class="item-box" id="index_box_0_item_1">10.50</div>
+					<div class="item-box" id="index_box_0_item_2">100.50</div>
+				</div>
+
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_1_item_0">10.50</div>
+					<div class="item-box" id="index_box_1_item_1">10.50</div>
+					<div class="item-box" id="index_box_1_item_2">100.50</div>
+				</div>
+
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_2_item_0">10.50</div>
+					<div class="item-box" id="index_box_2_item_1">10.50</div>
+					<div class="item-box" id="index_box_2_item_2">100.50</div>
+				</div>
+
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_3_item_0">10.50</div>
+					<div class="item-box" id="index_box_3_item_1">10.50</div>
+					<div class="item-box" id="index_box_3_item_2">100.50</div>
+				</div>
+
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_4_item_0">10.50</div>
+					<div class="item-box" id="index_box_4_item_1">10.50</div>
+					<div class="item-box" id="index_box_4_item_2">100.50</div>
+				</div>
+
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_5_item_0">10.50</div>
+					<div class="item-box" id="index_box_5_item_1">10.50</div>
+					<div class="item-box" id="index_box_5_item_2">100.50</div>
+				</div>
+
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_6_item_0">10.50</div>
+					<div class="item-box" id="index_box_6_item_1">10.50</div>
+					<div class="item-box" id="index_box_6_item_2">100.50</div>
+				</div>
+
+				<div class="chart-test-1__box-item" id="index_box_0">
+					<div class="item-box" id="index_box_7_item_0">10.50</div>
+					<div class="item-box" id="index_box_7_item_1">10.50</div>
+					<div class="item-box" id="index_box_7_item_2">100.50</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			var MONTHS = [
+				"January",
+				"February",
+				"March",
+				"April",
+				"May",
+				"June",
+				"July",
+				"August",
+				"September",
+				"October",
+				"November",
+				"December"
+			];
+			var barChartData = {
+				labels: ["", "", "", "", "", "", "", ""],
+				datasets: [
+					{
+						label: "Dataset 1",
+						defaultColor: "#0e7691",
+						backgroundColor: [
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691"
+						],
+						borderColor: [
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691",
+							"#0e7691"
+						],
+
+						borderWidth: 1,
+						data: [
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor()
+						]
+					},
+					{
+						label: "Dataset 2",
+						defaultColor: "#d4e4eb",
+						backgroundColor: [
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb"
+						],
+
+						borderColor: [
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb"
+						],
+
+						borderWidth: 1,
+						data: [
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor()
+						]
+					},
+					{
+						label: "Dataset 2",
+						defaultColor: "#d4e4eb",
+						backgroundColor: [
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb"
+						],
+
+						borderColor: [
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb",
+							"#d4e4eb"
+						],
+						borderWidth: 1,
+						data: [
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor(),
+							randomScalingFactor()
+						]
+					}
+				]
+			};
+
+			function arrayReset(barChartData) {
+				Object.keys(barChartData.datasets).forEach(function(mainItem) {
+					barChartData.datasets[mainItem].backgroundColor.forEach(
+						function(item, key) {
+							barChartData.datasets[mainItem].backgroundColor[
+								key
+							] = barChartData.datasets[mainItem].defaultColor;
+							barChartData.datasets[mainItem].borderColor[key] =
+								barChartData.datasets[mainItem].defaultColor;
+						}
+					);
+				});
+
+				return barChartData;
+			}
+
+			window.onload = function() {
+				var bar_chart = new Chart("canvas", {
+					type: "bar",
+					data: barChartData,
+					options: {
+						animation      : false,
+						scaleShowLabels: false,
+						backgroundColor: "rgba(0, 0, 0, 0.1)",
+						responsive     : true,
+						legend: {
+							display : false,
+							position: "top"
+						},
+						title: {
+							display: false,
+							text   : "Chart.js Bar Chart"
+						},
+						scales: {
+							yAxes: [
+								{
+									gridLines: {
+                    display: false,
+                  },
+                  
+								}
+							],
+							xAxes: [
+								{
+
+
+                  gridLines: {
+
+                    drawBorder: false,
+                  },
+              		//display: false,
+									// bar  width
+                  //barThickness      : 50,
+                  lineColor: 'transparent',
+									categoryPercentage: 0.8,
+									barPercentage     : 0.5
+								}
+							]
+						},
+
+						onHover: function(evt, activeElements) {
+							var item = bar_chart.getElementAtEvent(evt);
+
+							barChartData = arrayReset(barChartData);
+							bar_chart.update();
+							if (item.length) {
+								barChartData.datasets[
+									item[0]._datasetIndex
+								].backgroundColor[item[0]._index] = "#fb7751";
+
+								barChartData.datasets[
+									item[0]._datasetIndex
+								].borderColor[item[0]._index] = "#fb7751";
+
+								bar_chart.update();
+
+								$(".item-box").removeClass("active");
+								$(
+									`#index_box_${item[0]._index}_item_${
+										item[0]._datasetIndex
+									}`
+								).addClass("active");
+							} else {
+								$(".item-box").removeClass("active");
+							}
+						}
+					}
+				});
+			};
+		</script>
+	</body>
+</html>

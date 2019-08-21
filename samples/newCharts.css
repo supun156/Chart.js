@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+}
+
+body .chart-test-1 {
+  position: relative;
+  width: 100%;
+}
+
+body .chart-test-1__canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+body .chart-test-1__label {
+  padding: 0;
+  margin-left: 37px;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+body .chart-test-1__label li {
+  width: calc(100% / 8);
+  text-align: center;
+}
+
+body .chart-test-1__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 37px;
+  margin-top: -25px;
+}
+
+body .chart-test-1__box-item {
+  width: calc(100% / 8);
+  text-align: center;
+}
+
+body .chart-test-1__box-item div {
+  width: 96%;
+  height: 40px;
+  color: #fff;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body .chart-test-1__box-item div:first-child {
+  background-color: #0e7691;
+}
+
+body .chart-test-1__box-item div:not(:first-child) {
+  background-color: #d4e4eb;
+  color: #000;
+}
+
+body .chart-test-1__box-item div.active {
+  background-color: #fb7751;
+}
+/*# sourceMappingURL=newCharts.css.map */
